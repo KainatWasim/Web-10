@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+
+      /* Animated Gradient Background */
+      background: linear-gradient(270deg, #ff0000, #00ffcc, #0066ff, #ff00ff);
+      background-size: 800% 800%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #timer {
+      font-size: 48px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    button {
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .start { background: #4db8ff; color: white; }
+    .stop { background: #ff6666; color: white; }
+    .reset { background: #ffa31a; color: white; }
+    .short { background: #33cc66; color: white; }
+    .long { background: #6666ff; color: white; }
+
+    footer {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    footer span {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🍅 Pomodoro Timer</h1>
+    <div id="timer">25:00</div>
+    <div>
+      <button class="start" onclick="startTimer()">Start</button>
+      <button class="stop" onclick="stopTimer()">Stop</button>
+      <button class="reset" onclick="resetTimer()">Reset</button>
+    </div>
+    <div>
+      <button class="short" onclick="setShortBreak()">Short Break</button>
+      <button class="long" onclick="setLongBreak()">Long Break</button>
+    </div>
+    <footer> prepared by <span>❤</span> Kainat</footer>
+  </div>
+
+  <script src="web.js"></script>
+</body>
+</html>
